@@ -5,7 +5,7 @@ def print_arguments():
     plural_s = 's' if num_args != 1 else ''
     colon_or_dot = ':' if num_args > 0 else '.'
 
-    print(f" argument{plural_s}: {num_args}{colon_or_dot}")
+    print(f"{num_args} argument{plural_s}{colon_or_dot}")
 
     for i, arg in enumerate(sys.argv[1:], start=1):
         print(f"{i}: {arg}")
