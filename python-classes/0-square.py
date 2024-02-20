@@ -1,3 +1,4 @@
+"""writing a class that generate a  Square with size """
 class Square:
     """
     This class defines a square by its size.
