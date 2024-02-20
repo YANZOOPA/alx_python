@@ -1,24 +1,36 @@
-#python3 -c 'print(__import__("my_module").__doc__)'
 class Square:
-    #python3 -c 'print(__import__("my_module").MyClass.__doc__)'
     """
-    This class represents a square.
-
-    Attributes:
-        __size (int): The size of the square.
+    This class defines a square by its size.
     """
 
     def __init__(self, size):
-        #python3 -c 'print(__import__("my_module").my_function.__doc__)'
-        #python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
         """
-        Initializes a new instance of the Square class.
+        Initializes a square with the given size.
 
-        Args:
-            size (int): The size of the square. Defaults to 0.
-
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
+        :param size: The size of the square.
         """
         self.__size = size
+
+    def area(self):
+        """
+        Calculates the area of the square.
+
+        :return: The area of the square.
+        """
+        return self.__size * self.__size
+
+    def get_size(self):
+        """
+        Gets the size of the square.
+
+        :return: The size of the square.
+        """
+        return self.__size
+
+    def set_size(self, new_size):
+        """
+        Sets the size of the square.
+
+        :param new_size: The new size for the square.
+        """
+        self.__size = new_size
