@@ -37,6 +37,6 @@ if __name__ == "__main__":
     user_id = get_github_user_id(username, token)
 
     if user_id is not None:
-        print("Your GitHub user id is:", user_id)
+        print(user_id)
     else:
         print("Failed to retrieve GitHub user id.")
