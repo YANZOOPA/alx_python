@@ -24,15 +24,16 @@ class Base:
     @staticmethod
     def integer_validator(name, value):
         """
-        Validates the value to be an integer greater than 0.
+        Validates the value to be an integer greater than or equal to 0.
 
         :param name: The name of the value.
         :param value: The value to be validated.
         :raises TypeError: If the value is not an integer.
-        :raises ValueError: If the value is less or equal to 0.
+        :raises ValueError: If the value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
 
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+        if value < 0:
+            raise ValueError(f"{name} must be greater than or equal to 0")
+
