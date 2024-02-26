@@ -101,3 +101,14 @@ class Rectangle(Base):
         :return: String representation of the Rectangle.
         """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        """
+        Update attributes of the Rectangle.
+
+        :param args: Arguments in the order (id, width, height, x, y).
+        """
+        if args:
+            attributes = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
