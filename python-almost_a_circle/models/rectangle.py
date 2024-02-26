@@ -34,6 +34,8 @@ class Rectangle(Base):
     def width(self, value):
         """Setter for width."""
         self.integer_validator("width", value)
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -45,6 +47,8 @@ class Rectangle(Base):
     def height(self, value):
         """Setter for height."""
         self.integer_validator("height", value)
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -56,6 +60,8 @@ class Rectangle(Base):
     def x(self, value):
         """Setter for x."""
         self.integer_validator("x", value)
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -67,4 +73,6 @@ class Rectangle(Base):
     def y(self, value):
         """Setter for y."""
         self.integer_validator("y", value)
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
