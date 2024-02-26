@@ -18,6 +18,8 @@ def get_github_user_id(username, token):
 
     except requests.exceptions.HTTPError as e:
         # Handle HTTP errors (e.g., wrong credentials)
+        if response.status_code == 401:
+            return None
         print(f"HTTP Error: {e}")
         return None
 
@@ -39,4 +41,4 @@ if __name__ == "__main__":
     if user_id is not None:
         print(user_id)
     else:
-        print("Failed to retrieve GitHub user id.")
+        print("None")
